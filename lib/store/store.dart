@@ -1,7 +1,7 @@
 import 'package:velocity_x/velocity_x.dart';
 
 class Store extends VxStore {
+  // App Settings
   VxNavigator navigator;
-
-  Store();
+  bool isDarkTheme = false;
 }

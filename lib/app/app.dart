@@ -1,4 +1,4 @@
-import 'package:india_beats_covid/store/store.dart';
+import 'package:india_beats_covid/mutations/theme.dart';
 import 'package:india_beats_covid/themes/theme.dart';
 import 'package:india_beats_covid/views/home/home.dart';
 
@@ -11,18 +11,16 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    setupNavigator(_delegate);
-    return MaterialApp.router(
-      routerDelegate: _delegate,
-      routeInformationParser: VxInformationParser(),
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme(),
-      darkTheme: AppTheme.darkTheme(),
-    );
-  }
-
-  void setupNavigator(VxNavigator _delegate) {
     final Store store = VxState.store;
     store.navigator = _delegate;
+    return VxBuilder(
+      mutations: {ThemeMutation},
+      builder: (context, _) => MaterialApp.router(
+        routerDelegate: _delegate,
+        routeInformationParser: VxInformationParser(),
+        debugShowCheckedModeBanner: false,
+        theme: store.isDarkTheme ? AppTheme.darkTheme() : AppTheme.lightTheme(),
+      ),
+    );
   }
 }
