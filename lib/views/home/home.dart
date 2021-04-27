@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
+import 'package:india_beats_covid/views/common/error_page.dart';
 import 'package:india_beats_covid/views/home/theme_button.dart';
 
 import '../../pkgs.dart';
+import 'dashboard.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,15 +16,16 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    loadAllAPIs();
+    // loadAllAPIs();
   }
 
   @override
   Widget build(BuildContext context) {
+    loadAllAPIs();
     final Store store = VxState.store;
     return Scaffold(
       appBar: AppBar(
-        title: Constants.appName.text.make(),
+        title: Constants.appName.text.xl2.semiBold.make(),
         actions: [ThemeButton()],
       ),
       body: VStack(
@@ -30,18 +34,19 @@ class _HomeState extends State<Home> {
               builder: (context, status) {
                 if (status == VxStatus.none) {
                   print("loaded");
-                  return CircularProgressIndicator().centered();
+                  return const CupertinoActivityIndicator().centered();
                 } else if (status == VxStatus.success) {
-                  return Text(store.stats.hospitalBeds.total.toString());
+                  return Dashboard(stats: store.stats);
                 } else if (status == VxStatus.error) {
-                  return Text("error");
+                  return ErrorPage();
                 }
-                return Text("");
+                return Constants.wentWrong.text.xl2.semiBold.makeCentered();
               },
               mutations: {StatsMutation})
         ],
         crossAlignment: CrossAxisAlignment.center,
-      ),
+        alignment: MainAxisAlignment.center,
+      ).p16().scrollVertical(),
     );
   }
 }

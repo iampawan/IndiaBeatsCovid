@@ -19,7 +19,9 @@ class App extends StatelessWidget {
         routerDelegate: _delegate,
         routeInformationParser: VxInformationParser(),
         debugShowCheckedModeBanner: false,
-        theme: store.isDarkTheme ? AppTheme.darkTheme() : AppTheme.lightTheme(),
+        theme: store.isDarkTheme
+            ? AppTheme.darkTheme(context)
+            : AppTheme.lightTheme(context),
       ),
     );
   }

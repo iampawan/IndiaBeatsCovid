@@ -3,6 +3,9 @@ mixin Constants {
   static String appName = "India Beats Covid";
   static String baseUrl = "https://indiabeatscovid.in/";
 
+  //Assets
+  static String imageAsset = "assets/images/";
+
   // Generic Texts
   static String weAreWithYou = "We are with you";
   static String effortsText =

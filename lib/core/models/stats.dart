@@ -42,6 +42,8 @@ class Total {
   int total;
   String lastUpdated;
 
+  String get formattedTime => lastUpdated;
+
   Total({
     this.total,
     this.lastUpdated,

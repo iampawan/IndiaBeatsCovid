@@ -12,11 +12,11 @@ final APIService _apiService = APIService();
 
 loadAllAPIs() async {
   StatsMutation();
-  DonorsMutation();
-  CityMutation();
-  HospitalBedsMutation();
-  OxygenMutation();
-  ExternalLinksMutation();
+  // DonorsMutation();
+  // CityMutation();
+  // HospitalBedsMutation();
+  // OxygenMutation();
+  // ExternalLinksMutation();
 }
 
 class StatsMutation extends VxMutation<Store> with APIEffects {
