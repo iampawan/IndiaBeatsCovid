@@ -1,5 +1,7 @@
 mixin Constants {
+  // App Related
   static String appName = "India Beats Covid";
+  static String baseUrl = "https://indiabeatscovid.in/";
 
   // Generic Texts
   static String weAreWithYou = "We are with you";
@@ -11,6 +13,10 @@ mixin Constants {
 
   static String lastUpdated = "Last updated";
   static String total = "Total";
+
+  // Utils
+
+  static String noInternet = "Looks like you are not connected to the internet";
 
   // * Home Texts
   static String plasmaDonors = "Plasma Donors";
