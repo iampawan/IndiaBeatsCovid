@@ -7,12 +7,12 @@ import 'package:india_beats_covid/views/home/theme_button.dart';
 import '../../pkgs.dart';
 import 'dashboard.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();

@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/views/common/error_page.dart';
-import 'package:india_beats_covid/views/hospital/hospital_list.dart';
 
 import '../../pkgs.dart';
+import 'oxygen_list.dart';
 
-class Hospital extends StatelessWidget {
+class OxygenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    HospitalBedsMutation();
+    OxygenMutation();
     final Store store = VxState.store;
     return Scaffold(
       appBar: AppBar(
-        title: Constants.hospitalWithBeds.text.xl2.semiBold.make(),
+        title: Constants.oxygenSuppliers.text.xl2.semiBold.make(),
       ),
       body: VxBuilder(
           builder: (context, status) {
@@ -21,13 +21,13 @@ class Hospital extends StatelessWidget {
               print("loaded");
               return const CupertinoActivityIndicator().centered();
             } else if (status == VxStatus.success) {
-              return HospitalList(beds: store.beds);
+              return OxygenList(suppliers: store.oxygenSuppliers);
             } else if (status == VxStatus.error) {
               return ErrorPage();
             }
             return Constants.wentWrong.text.xl2.semiBold.makeCentered();
           },
-          mutations: {HospitalBedsMutation}),
+          mutations: {OxygenMutation}),
     );
   }
 }

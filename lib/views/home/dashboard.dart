@@ -39,6 +39,7 @@ class Dashboard extends StatelessWidget {
               subtitle: stats.oxygenSuppliers.total.toString(),
               dense: stats.oxygenSuppliers.formattedTime,
               color: Vx.cyan400,
+              onTap: () => context.vxNav.push(Uri.parse(Routes.oxygenRoute)),
             ),
             ActionCard(
               title: Constants.medicineSuppliers,
