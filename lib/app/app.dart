@@ -1,5 +1,5 @@
 import 'package:india_beats_covid/mutations/theme.dart';
-import 'package:india_beats_covid/themes/theme.dart';
+import 'package:india_beats_covid/utils/themes/theme.dart';
 import 'package:india_beats_covid/views/home/home.dart';
 
 import '../pkgs.dart';

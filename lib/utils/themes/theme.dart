@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:india_beats_covid/themes/colors.dart';
+
+import 'colors.dart';
 
 class AppTheme {
   static ThemeData lightTheme() {

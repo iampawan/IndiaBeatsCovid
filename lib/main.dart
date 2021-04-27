@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
-import 'package:india_beats_covid/di/injection.dart';
+import 'package:india_beats_covid/core/di/injection.dart';
 import 'package:india_beats_covid/pkgs.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'app/app.dart';
+import 'core/store.dart';
 import 'pkgs.dart';
-import 'store/store.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

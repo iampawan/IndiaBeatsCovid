@@ -1,4 +1,4 @@
-import '../pkgs.dart';
+import '../../pkgs.dart';
 
 mixin AppColors {
   static Color primaryColor = Vx.red500;
