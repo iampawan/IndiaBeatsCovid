@@ -44,7 +44,7 @@ class DioClient implements IClient {
 
 // * Method for HTTP GET REQUEST
   @override
-  Future<MappedNetworkServiceResponse<T>> getAsync<T>(String resourcePath,
+  Future<MappedServiceResponse<T>> getAsync<T>(String resourcePath,
       {bool customHeaders, queryParams}) async {
 //    developer.log(queryParams.toString());
     dynamic response;
@@ -62,15 +62,15 @@ class DioClient implements IClient {
         ),
       );
     } on SocketException catch (_) {
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false, message: socketExceptionMessage));
     } catch (e) {
       if ((e as DioError).response?.statusCode == HttpStatus.badRequest) {
-        return MappedNetworkServiceResponse(
+        return MappedServiceResponse(
             networkServiceResponse: NetworkServiceResponse(
                 success: false,
-                message: (e as DioError).response.data["error_message"]));
+                message: (e as DioError).response.data["error"]));
       }
       return catchError(e);
     }
@@ -79,7 +79,7 @@ class DioClient implements IClient {
   }
 
   @override
-  Future<MappedNetworkServiceResponse<T>> deleteAsync<T>(String resourcePath,
+  Future<MappedServiceResponse<T>> deleteAsync<T>(String resourcePath,
       {bool customHeaders, queryParams}) async {
 //    developer.log(queryParams.toString());
     dynamic response;
@@ -93,12 +93,12 @@ class DioClient implements IClient {
         ),
       );
     } on SocketException catch (_) {
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false, message: socketExceptionMessage));
     } catch (e) {
       if ((e as DioError).response?.statusCode == HttpStatus.badRequest) {
-        return MappedNetworkServiceResponse(
+        return MappedServiceResponse(
             networkServiceResponse: NetworkServiceResponse(
                 success: false,
                 message: (e as DioError).response.data["error_message"]));
@@ -111,7 +111,7 @@ class DioClient implements IClient {
 
 // * Method for HTTP POST REQUEST
   @override
-  Future<MappedNetworkServiceResponse<T>> postAsync<T>(
+  Future<MappedServiceResponse<T>> postAsync<T>(
       String resourcePath, dynamic data,
       {bool customHeaders = false, bool isPlainFormat = false}) async {
     if (isPlainFormat) {
@@ -131,7 +131,7 @@ class DioClient implements IClient {
         data: content,
       );
     } on SocketException catch (_) {
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false, message: socketExceptionMessage));
     } catch (e) {
@@ -144,7 +144,7 @@ class DioClient implements IClient {
 
   // * Method for HTTP POST REQUEST
   @override
-  Future<MappedNetworkServiceResponse<T>> patchAsync<T>(
+  Future<MappedServiceResponse<T>> patchAsync<T>(
       String resourcePath, dynamic data,
       {bool customHeaders = false}) async {
     if (customHeaders) {
@@ -163,7 +163,7 @@ class DioClient implements IClient {
         ),
       );
     } on SocketException catch (_) {
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false, message: socketExceptionMessage));
     } catch (e) {
@@ -175,7 +175,7 @@ class DioClient implements IClient {
   }
 
   @override
-  Future<MappedNetworkServiceResponse<T>> postFileAsync<T>(
+  Future<MappedServiceResponse<T>> postFileAsync<T>(
       String resourcePath, Object data,
       {bool customHeaders = false}) async {
     dynamic response;
@@ -185,7 +185,7 @@ class DioClient implements IClient {
         data: data,
       );
     } on SocketException catch (_) {
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false, message: socketExceptionMessage));
     } catch (e) {
@@ -196,7 +196,7 @@ class DioClient implements IClient {
     return await processResponse<T>(response);
   }
 
-  MappedNetworkServiceResponse catchError(e) {
+  MappedServiceResponse catchError(e) {
     final DioError err = e;
     const String problemMsg =
         "Problem connecting to the server. Please try again";
@@ -213,19 +213,19 @@ class DioClient implements IClient {
       }
     } else if (err?.response?.statusCode.toString().startsWith("4")) {
       try {
-        message = err.response?.data["error"]["message"] ?? problemMsg;
+        message = err.response?.data["error"] ?? problemMsg;
       } catch (e) {
         message = problemMsg;
       }
     } else {
       message = problemMsg;
     }
-    return MappedNetworkServiceResponse(
+    return MappedServiceResponse(
         networkServiceResponse:
             NetworkServiceResponse(success: false, message: message));
   }
 
-  Future<MappedNetworkServiceResponse<T>> processResponse<T>(
+  Future<MappedServiceResponse<T>> processResponse<T>(
       Response response) async {
     if (!((response.statusCode < HttpStatus.ok) ||
         (response.statusCode >= HttpStatus.multipleChoices) ||
@@ -233,12 +233,12 @@ class DioClient implements IClient {
       final jRes = jsonEncode(response.data);
       // debugPrint(jRes, wrapWidth: 1024);
       developer.log(jRes);
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           mappedResult: response.data,
           networkServiceResponse: NetworkServiceResponse<T>(success: true));
     } else {
       final errorResponse = response.data;
-      return MappedNetworkServiceResponse<T>(
+      return MappedServiceResponse<T>(
           networkServiceResponse: NetworkServiceResponse<T>(
               success: false,
               message: "(${response.statusCode}) ${errorResponse.toString()}"));

@@ -6,9 +6,8 @@ class NetworkServiceResponse<T> {
   NetworkServiceResponse({this.content, this.success, this.message});
 }
 
-class MappedNetworkServiceResponse<T> {
+class MappedServiceResponse<T> {
   dynamic mappedResult;
   NetworkServiceResponse<T> networkServiceResponse;
-  MappedNetworkServiceResponse(
-      {this.mappedResult, this.networkServiceResponse});
+  MappedServiceResponse({this.mappedResult, this.networkServiceResponse});
 }
