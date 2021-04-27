@@ -1,7 +1,9 @@
 import 'package:india_beats_covid/core/models/stats.dart';
 import 'package:india_beats_covid/utils/constants.dart';
+import 'package:india_beats_covid/utils/routes.dart';
 
 import '../../pkgs.dart';
+import 'action_card.dart';
 
 class Dashboard extends StatelessWidget {
   final Stats stats;
@@ -23,12 +25,14 @@ class Dashboard extends StatelessWidget {
               subtitle: stats.plasmaDonors.total.toString(),
               dense: stats.plasmaDonors.formattedTime,
               color: Vx.emerald400,
+              onTap: () => context.vxNav.push(Uri.parse(Routes.plasmaRoute)),
             ),
             ActionCard(
               title: Constants.hospitalWithBeds,
               subtitle: stats.hospitalBeds.total.toString(),
               dense: stats.hospitalBeds.formattedTime,
               color: Vx.pink400,
+              onTap: () => context.vxNav.push(Uri.parse(Routes.hospitalRoute)),
             ),
             ActionCard(
               title: Constants.oxygenSuppliers,
@@ -46,56 +50,5 @@ class Dashboard extends StatelessWidget {
         ).wFull(context)
       ],
     );
-  }
-}
-
-class ActionCard extends StatelessWidget {
-  final Color color;
-  final String title;
-  final String subtitle;
-  final String dense;
-
-  const ActionCard(
-      {Key key,
-      this.color = Vx.emerald400,
-      @required this.title,
-      @required this.subtitle,
-      this.dense})
-      : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        VxBox().color(color).width(10).make(),
-        10.widthBox,
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              title.text.xl2.semiBold.make(),
-              "${Constants.total} Count - $subtitle"
-                  .text
-                  .bodyText1(context)
-                  .make()
-                  .py2(),
-              if (dense != null)
-                "${Constants.lastUpdated} - $dense"
-                    .text
-                    .caption(context)
-                    .make()
-                    .py2(),
-            ],
-          ).p8(),
-        )
-      ],
-    )
-        .box
-        .clip(Clip.antiAlias)
-        .color(context.theme.cardColor)
-        .width(context.percentWidth * 40)
-        .height(context.percentHeight * 18)
-        .border(color: color)
-        .roundedSM
-        .make();
   }
 }

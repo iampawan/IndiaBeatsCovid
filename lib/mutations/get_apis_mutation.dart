@@ -12,8 +12,9 @@ final APIService _apiService = APIService();
 
 loadAllAPIs() async {
   StatsMutation();
+  CityMutation();
   // DonorsMutation();
-  // CityMutation();
+
   // HospitalBedsMutation();
   // OxygenMutation();
   // ExternalLinksMutation();
@@ -141,6 +142,15 @@ class CityMutation extends VxMutation<Store> with APIEffects {
   void onException(e, StackTrace s) {
     err = e.toString();
     super.onException(e, s);
+  }
+
+  static String getCity(Store store, int cityId) {
+    return store.cities
+        .firstWhere(
+          (c) => c.id == cityId,
+          orElse: () => null,
+        )
+        ?.name;
   }
 }
 
