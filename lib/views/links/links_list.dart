@@ -17,6 +17,7 @@ class LinksList extends StatelessWidget {
     final Store store = VxState.store;
     return links.isNotEmpty
         ? ListView.builder(
+            shrinkWrap: true,
             // separatorBuilder: (context, index) => const Divider(),
             itemCount: links.length,
             itemBuilder: (context, index) {

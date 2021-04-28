@@ -33,12 +33,15 @@ class ActionCard extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                title.text.xl2.semiBold.make(),
+                title.text.xl2.extraBold.make(),
                 if (subtitle != null)
                   "${Constants.total} Count - $subtitle"
                       .text
                       .bodyText1(context)
+                      .xl
+                      .semiBold
                       .make()
                       .py2(),
                 if (subtitle2 != null)

@@ -13,6 +13,9 @@ class Store extends VxStore {
   VxNavigator navigator;
   bool isDarkTheme = false;
 
+  //Home
+  int selectedIndex = 0;
+
   // Data
   Stats stats;
   List<Donors> donors;
