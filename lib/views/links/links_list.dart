@@ -29,10 +29,11 @@ class LinksList extends StatelessWidget {
                   children: [
                     link.title.text.xl.semiBold.make(),
                     10.heightBox,
-                    if (link.favicon.endsWith("svg"))
-                      SvgPicture.network(link.favicon)
-                    else
-                      Image.network(link.favicon),
+                    if (!Vx.isWeb)
+                      if (link.favicon.endsWith("svg"))
+                        SvgPicture.network(link.favicon)
+                      else
+                        Image.network(link.favicon),
                     MyRichText(title: "Desc", value: link.description),
                     10.heightBox,
                     Link(

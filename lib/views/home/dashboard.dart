@@ -19,10 +19,11 @@ class Dashboard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         [
-          SvgPicture.asset(
-            "${Constants.imageAsset}mask-man.svg",
-            height: 100.0,
-          ),
+          if (!Vx.isWeb)
+            SvgPicture.asset(
+              "${Constants.imageAsset}mask-man.svg",
+              height: 100.0,
+            ),
           "Dashboard".text.bodyText2(context).xl4.semiBold.make(),
         ].hStack(),
         20.heightBox,
@@ -74,7 +75,7 @@ class Dashboard extends StatelessWidget {
           ).pOnly(left: 8),
           color: Vx.blue400,
           onTap: () => context.vxNav.push(Uri.parse(Routes.twitterSearchRoute)),
-        ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
+        ).wFull(context).pOnly(right: 30.0),
         20.heightBox,
         Link(
           target: LinkTarget.blank,
@@ -88,7 +89,7 @@ class Dashboard extends StatelessWidget {
             ).pOnly(left: 8),
             color: Vx.rose400,
             onTap: followLink,
-          ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
+          ).wFull(context).pOnly(right: 30.0),
         ),
         20.heightBox,
         ActionCard(
@@ -100,7 +101,7 @@ class Dashboard extends StatelessWidget {
           ).pOnly(left: 8),
           color: Vx.purple400,
           onTap: () => context.vxNav.push(Uri.parse(Routes.treatingCovidRoute)),
-        ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
+        ).wFull(context).pOnly(right: 30.0),
       ],
     );
   }

@@ -26,6 +26,7 @@ class ActionCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Row(
+        mainAxisSize: MainAxisSize.max,
         children: [
           VxBox().color(color).width(10).make(),
           if (iconOrImage != null) iconOrImage,
@@ -61,7 +62,7 @@ class ActionCard extends StatelessWidget {
           .clip(Clip.antiAlias)
           .color(context.theme.cardColor)
           .width(context.percentWidth * 40)
-          .height(context.percentHeight * 20)
+          .height(context.percentHeight * 18)
           .border(color: color)
           .roundedSM
           .make(),

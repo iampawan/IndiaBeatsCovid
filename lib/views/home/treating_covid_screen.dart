@@ -26,10 +26,11 @@ class TreatingCovidScreen extends StatelessWidget {
               .make(),
           10.heightBox,
           [
-            SvgPicture.asset(
-              "${Constants.imageAsset}doctor-woman.svg",
-              height: 300.0,
-            ).w32(context).centered(),
+            if (!Vx.isWeb)
+              SvgPicture.asset(
+                "${Constants.imageAsset}doctor-woman.svg",
+                height: 300.0,
+              ).w32(context).centered(),
             VxDiscList(
               [
                 "Keep your hands clean and away from your face",
@@ -57,10 +58,11 @@ class TreatingCovidScreen extends StatelessWidget {
               ],
               color: context.textTheme.bodyText1.color,
             ).w56(context),
-            SvgPicture.asset(
-              "${Constants.imageAsset}mask-woman.svg",
-              height: 200.0,
-            ).w32(context).centered(),
+            if (!Vx.isWeb)
+              SvgPicture.asset(
+                "${Constants.imageAsset}mask-woman.svg",
+                height: 200.0,
+              ).w32(context).centered(),
           ].hStack(crossAlignment: CrossAxisAlignment.start),
           20.heightBox,
           "At-Home Coronavirus Treatment".text.xl2.bold.make(),
@@ -103,10 +105,11 @@ class TreatingCovidScreen extends StatelessWidget {
               ],
               color: context.textTheme.bodyText1.color,
             ).w56(context),
-            SvgPicture.asset(
-              "${Constants.imageAsset}doctor-man.svg",
-              height: 200.0,
-            ).w32(context).centered(),
+            if (!Vx.isWeb)
+              SvgPicture.asset(
+                "${Constants.imageAsset}doctor-man.svg",
+                height: 200.0,
+              ).w32(context).centered(),
           ].hStack(),
         ],
       ).p16().scrollVertical(),
