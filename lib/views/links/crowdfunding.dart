@@ -9,6 +9,7 @@ class CrowdFunding extends StatelessWidget {
       shrinkWrap: true,
       children: [
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://hemkuntfoundation.com/donate-now/"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -20,6 +21,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(
               "https://www.ketto.org/fundraiser/mission-oxygen-helping-hospitals-to-save-lives"),
           builder: (context, followLink) => Card(
@@ -32,6 +34,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://donate.indiacovidresources.in/"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -43,6 +46,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(
               "https://fundraisers.giveindia.org/fundraisers/khaanachahiye-mumbai-is-battling-hunger-along-with-covid-19-again"),
           builder: (context, followLink) => Card(
@@ -55,6 +59,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(
               "https://docs.google.com/document/d/1eiobgyrl8iz-R1Dz7c4R5pzzzkuZLBj99vaC7T_UeVo/preview?pru=AAABeSyRln8*PCmPgIgWReCQfUiK7xZ3BQ"),
           builder: (context, followLink) => Card(
@@ -67,6 +72,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://covid.giveindia.org/healthcare-heroes/"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -78,6 +84,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://goonj.org/donate/"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -89,6 +96,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://milaap.org/fundraisers/support-hbs-hospital"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -100,6 +108,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(
               "https://www.ketto.org/fundraiser/DrinkingwaterforCOVIDpatientsmumbai?utm_source=MutualAidIndia"),
           builder: (context, followLink) => Card(
@@ -112,6 +121,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(
               "https://www.udayfoundation.org/coronavirus-disease-covid-19/"),
           builder: (context, followLink) => Card(
@@ -124,6 +134,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://www.akshayapatra.org/covid-relief-services"),
           builder: (context, followLink) => Card(
             child: ListTile(
@@ -135,6 +146,7 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://www.impactguru.com/fundraiser/oxygen"),
           builder: (context, followLink) => Card(
             child: ListTile(

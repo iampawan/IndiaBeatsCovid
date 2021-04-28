@@ -63,7 +63,7 @@ class Dashboard extends StatelessWidget {
               onTap: () => context.vxNav.push(Uri.parse(Routes.medicineRoute)),
             ),
           ],
-        ).wFull(context),
+        ),
         20.heightBox,
         ActionCard(
           title: Constants.twitterSearch,

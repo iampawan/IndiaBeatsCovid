@@ -55,7 +55,7 @@ class LinksList extends StatelessWidget {
                 ).p16(),
               );
             },
-          )
+          ).hFull(context)
         : NoDataPage();
   }
 }
