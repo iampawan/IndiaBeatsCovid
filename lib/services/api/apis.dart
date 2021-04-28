@@ -25,25 +25,25 @@ class APIService {
   }
 
   //Hospital Beds Api
-  Future<MappedServiceResponse<dynamic>> getHospitalBeds() async {
+  Future<MappedServiceResponse<dynamic>> getHospitalBeds() {
     const _url = "hospital_beds.json";
     return _client.getAsync(_url);
   }
 
   //External Links Api
-  Future<MappedServiceResponse<dynamic>> getExternalLinks() async {
+  Future<MappedServiceResponse<dynamic>> getExternalLinks() {
     const _url = "external_links.json";
     return _client.getAsync(_url);
   }
 
   //Oxygen Suppliers Api
-  Future<MappedServiceResponse<dynamic>> getOxygenSuppliers() async {
+  Future<MappedServiceResponse<dynamic>> getOxygenSuppliers() {
     const _url = "oxygen_suppliers.json";
     return _client.getAsync(_url);
   }
 
   //Medicine Suppliers Api
-  Future<MappedServiceResponse<dynamic>> getMedicineSupplies() async {
+  Future<MappedServiceResponse<dynamic>> getMedicineSupplies() {
     const _url = "medicines.json";
     return _client.getAsync(_url);
   }

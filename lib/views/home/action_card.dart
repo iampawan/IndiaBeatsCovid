@@ -6,16 +6,20 @@ class ActionCard extends StatelessWidget {
   final Color color;
   final String title;
   final String subtitle;
+  final String subtitle2;
   final String dense;
   final VoidCallback onTap;
+  final Widget iconOrImage;
 
   const ActionCard(
       {Key key,
       this.color = Vx.emerald400,
       @required this.title,
-      @required this.subtitle,
+      this.subtitle,
+      this.subtitle2,
       this.dense,
-      this.onTap})
+      this.onTap,
+      this.iconOrImage})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -24,17 +28,21 @@ class ActionCard extends StatelessWidget {
       child: Row(
         children: [
           VxBox().color(color).width(10).make(),
+          if (iconOrImage != null) iconOrImage,
           10.widthBox,
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 title.text.xl2.semiBold.make(),
-                "${Constants.total} Count - $subtitle"
-                    .text
-                    .bodyText1(context)
-                    .make()
-                    .py2(),
+                if (subtitle != null)
+                  "${Constants.total} Count - $subtitle"
+                      .text
+                      .bodyText1(context)
+                      .make()
+                      .py2(),
+                if (subtitle2 != null)
+                  "$subtitle2".text.bodyText1(context).make().py2(),
                 if (dense != null)
                   "${Constants.lastUpdated} - $dense"
                       .text

@@ -2,6 +2,8 @@ mixin Constants {
   // App Related
   static String appName = "India Beats Covid";
   static String baseUrl = "https://indiabeatscovid.in/";
+  static String policyUrl = "https://indiabeatscovid.in/policies";
+  static String mailID = "indiabeatscovid@gmail.com";
 
   //Assets
   static String imageAsset = "assets/images/";
@@ -29,4 +31,9 @@ mixin Constants {
   static String oxygenSuppliers = "Oxygen Suppliers";
   static String medicineSuppliers = "COVID Medicine Suppliers";
   static String externalLinks = "External Links";
+  static String twitterSearch = "Twitter Search for COVID";
+  static String twitterResources =
+      "Find latest resources in real time on Twitter";
+  static String selectRegion = "Select/Type Region";
+  static String findOnTwitter = "Find On Twitter";
 }

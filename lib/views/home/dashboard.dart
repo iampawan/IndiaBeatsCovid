@@ -1,3 +1,4 @@
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:india_beats_covid/core/models/stats.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/utils/routes.dart';
@@ -52,6 +53,14 @@ class Dashboard extends StatelessWidget {
               color: Vx.amber400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.medicineRoute)),
             ),
+            ActionCard(
+              title: Constants.twitterSearch,
+              subtitle2: Constants.twitterResources,
+              iconOrImage: const Icon(FontAwesome.twitter).pOnly(left: 8),
+              color: Vx.blue400,
+              onTap: () =>
+                  context.vxNav.push(Uri.parse(Routes.twitterSearchRoute)),
+            ).wh(context.screenWidth, 80.0).px12(),
           ],
         ).wFull(context)
       ],

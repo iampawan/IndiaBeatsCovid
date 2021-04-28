@@ -14,7 +14,7 @@ class ExternalLink extends StatelessWidget {
           title: "External Links".text.xl.semiBold.make(),
           trailing: const Icon(
             FontAwesome.link,
-            color: Vx.purple400,
+            color: Vx.indigo400,
           ),
         ),
       ),

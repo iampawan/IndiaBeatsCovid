@@ -225,14 +225,13 @@ class DioClient implements IClient {
             NetworkServiceResponse(success: false, message: message));
   }
 
-  Future<MappedServiceResponse<T>> processResponse<T>(
-      Response response) async {
+  Future<MappedServiceResponse<T>> processResponse<T>(Response response) async {
     if (!((response.statusCode < HttpStatus.ok) ||
         (response.statusCode >= HttpStatus.multipleChoices) ||
         (response.data == null))) {
-      final jRes = jsonEncode(response.data);
+      // final jRes = jsonEncode(response.data);
       // debugPrint(jRes, wrapWidth: 1024);
-      developer.log(jRes);
+      // developer.log(jRes);
       return MappedServiceResponse<T>(
           mappedResult: response.data,
           networkServiceResponse: NetworkServiceResponse<T>(success: true));
