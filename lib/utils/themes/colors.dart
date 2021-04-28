@@ -1,6 +1,6 @@
 import '../../pkgs.dart';
 
 mixin AppColors {
-  static Color primaryColor = Vx.purple500;
-  static Color accentColor = Vx.amber400;
+  static Color primaryColor = Vx.purple600;
+  static Color accentColor = Vx.purple400;
 }

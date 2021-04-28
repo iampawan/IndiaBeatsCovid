@@ -1,3 +1,16 @@
+const bloodGroups = [
+  "A+",
+  "A-",
+  "B+",
+  "B-",
+  "O+",
+  "O-",
+  "AB+",
+  "AB-",
+  "Blood Bank",
+  "All Blood Groups"
+];
+
 const cities = [
   "Achalpur",
   "Achhnera",

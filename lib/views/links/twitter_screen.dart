@@ -1,4 +1,4 @@
-import 'package:india_beats_covid/utils/city.dart';
+import 'package:india_beats_covid/core/mock/mock_data.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:url_launcher/link.dart';
 

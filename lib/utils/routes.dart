@@ -6,4 +6,8 @@ mixin Routes {
   static String linkRoute = "/links";
   static String medicineRoute = "/medicines";
   static String twitterSearchRoute = "/search_twitter";
+  static String addPlasmaRoute = "/add_plasma";
+  static String addHospitalRoute = "/add_hospital";
+  static String addOxygenRoute = "/add_oxygen_supplier";
+  static String addMedicineRoute = "/add_medicine";
 }

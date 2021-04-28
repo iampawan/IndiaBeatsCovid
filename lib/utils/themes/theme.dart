@@ -23,6 +23,7 @@ class AppTheme {
   static ThemeData darkTheme(BuildContext context) {
     return ThemeData(
       brightness: Brightness.dark,
+      primarySwatch: Colors.purple,
       primaryColor: AppColors.primaryColor,
       accentColor: AppColors.accentColor,
       fontFamily: GoogleFonts.muli().fontFamily,
