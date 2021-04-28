@@ -27,4 +27,5 @@ mixin Constants {
   static String hospitalWithBeds = "Hospital With Beds";
   static String oxygenSuppliers = "Oxygen Suppliers";
   static String medicineSuppliers = "COVID Medicine Suppliers";
+  static String externalLinks = "External Links";
 }

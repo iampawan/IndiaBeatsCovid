@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
+import 'package:india_beats_covid/utils/routes.dart';
 import 'package:india_beats_covid/views/common/error_page.dart';
 import 'package:india_beats_covid/views/home/theme_button.dart';
 
@@ -36,7 +38,31 @@ class _HomeScreenState extends State<HomeScreen> {
                   print("loaded");
                   return const CupertinoActivityIndicator().centered();
                 } else if (status == VxStatus.success) {
-                  return Dashboard(stats: store.stats);
+                  return [
+                    Dashboard(stats: store.stats),
+                    20.heightBox,
+                    "Resources"
+                        .text
+                        .bodyText2(context)
+                        .xl4
+                        .semiBold
+                        .make()
+                        .px16(),
+                    GestureDetector(
+                      onTap: () =>
+                          context.vxNav.push(Uri.parse(Routes.linkRoute)),
+                      child: Card(
+                        elevation: 0.0,
+                        child: ListTile(
+                          title: "External Links".text.xl.semiBold.make(),
+                          trailing: const Icon(
+                            FontAwesome.link,
+                            color: Vx.purple400,
+                          ),
+                        ),
+                      ),
+                    )
+                  ].vStack(crossAlignment: CrossAxisAlignment.start);
                 } else if (status == VxStatus.error) {
                   return ErrorPage();
                 }

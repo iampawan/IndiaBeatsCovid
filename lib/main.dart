@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:india_beats_covid/core/di/injection.dart';
 import 'package:india_beats_covid/pkgs.dart';
 import 'package:india_beats_covid/utils/constants.dart';
+import 'package:url_strategy/url_strategy.dart';
 import 'app/app.dart';
 import 'core/store.dart';
 import 'pkgs.dart';
@@ -10,6 +11,8 @@ import 'pkgs.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setOverlay();
+
+  setPathUrlStrategy();
 
   final dio = Dio(BaseOptions(baseUrl: Constants.baseUrl));
 

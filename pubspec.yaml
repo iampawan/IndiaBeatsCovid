@@ -29,6 +29,7 @@ dependencies:
   flutter_svg: ^0.22.0
   google_fonts: ^2.0.0
   intl: ^0.17.0
+  url_launcher: ^6.0.3
   url_strategy: ^0.2.0
   velocity_x: ^3.0.0
 
