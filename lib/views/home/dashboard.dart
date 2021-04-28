@@ -77,6 +77,7 @@ class Dashboard extends StatelessWidget {
         ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
         20.heightBox,
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse("https://selfregistration.cowin.gov.in/"),
           builder: (context, followLink) => ActionCard(
             title: Constants.registerForVaccine,

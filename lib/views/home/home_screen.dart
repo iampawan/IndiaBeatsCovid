@@ -57,6 +57,7 @@ class HomeScreen extends StatelessWidget {
       ].vStack(crossAlignment: CrossAxisAlignment.start),
       [
         Link(
+          target: LinkTarget.blank,
           uri: Uri.parse(Constants.policyUrl),
           builder: (context, followLink) =>
               "Declaration/Policy".text.underline.make().onTap(followLink),
@@ -71,6 +72,7 @@ class HomeScreen extends StatelessWidget {
         10.heightBox,
         Link(
           uri: Uri.parse(Constants.devUrl),
+          target: LinkTarget.blank,
           builder: (context, followLink) => "Reach to developer"
               .text
               .rose400

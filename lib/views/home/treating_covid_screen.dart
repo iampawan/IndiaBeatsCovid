@@ -43,6 +43,7 @@ class TreatingCovidScreen extends StatelessWidget {
               color: context.textTheme.bodyText1.color,
             ).w56(context),
           ].hStack(crossAlignment: CrossAxisAlignment.start),
+          20.heightBox,
           "Emergency warning signs".text.xl2.bold.make(),
           10.heightBox,
           [
@@ -61,6 +62,7 @@ class TreatingCovidScreen extends StatelessWidget {
               height: 200.0,
             ).w32(context).centered(),
           ].hStack(crossAlignment: CrossAxisAlignment.start),
+          20.heightBox,
           "At-Home Coronavirus Treatment".text.xl2.bold.make(),
           VxDiscList(
             [
@@ -73,6 +75,7 @@ class TreatingCovidScreen extends StatelessWidget {
             ],
             color: context.textTheme.bodyText1.color,
           ),
+          20.heightBox,
           "Monitoring Tips".text.xl2.bold.make(),
           VxDiscList(
             [
@@ -84,6 +87,7 @@ class TreatingCovidScreen extends StatelessWidget {
             ],
             color: context.textTheme.bodyText1.color,
           ),
+          20.heightBox,
           "Some simple useful medicines for everyone (Consult doctor if required or in emergency)"
               .text
               .xl2
