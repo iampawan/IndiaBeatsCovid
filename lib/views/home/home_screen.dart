@@ -68,6 +68,17 @@ class HomeScreen extends StatelessWidget {
             .make(),
         10.heightBox,
         "Version - 1.0.0".text.caption(context).make(),
+        10.heightBox,
+        Link(
+          uri: Uri.parse(Constants.devUrl),
+          builder: (context, followLink) => "Reach to developer"
+              .text
+              .rose400
+              .underline
+              .semiBold
+              .make()
+              .onTap(followLink),
+        ),
       ].vStack(crossAlignment: CrossAxisAlignment.start).p16()
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }

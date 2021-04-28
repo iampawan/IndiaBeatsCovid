@@ -2,6 +2,7 @@ import 'package:india_beats_covid/mutations/theme_mutation.dart';
 import 'package:india_beats_covid/utils/routes.dart';
 import 'package:india_beats_covid/utils/themes/theme.dart';
 import 'package:india_beats_covid/views/home/home_screen.dart';
+import 'package:india_beats_covid/views/home/treating_covid_screen.dart';
 import 'package:india_beats_covid/views/hospital/hospital_screen.dart';
 import 'package:india_beats_covid/views/links/link_screen.dart';
 import 'package:india_beats_covid/views/links/twitter_screen.dart';
@@ -21,6 +22,8 @@ class App extends StatelessWidget {
     Routes.linkRoute: (_, __) => MaterialPage(child: LinkScreen()),
     Routes.medicineRoute: (_, __) => MaterialPage(child: MedicineScreen()),
     Routes.twitterSearchRoute: (_, __) => MaterialPage(child: TwitterScreen()),
+    Routes.treatingCovidRoute: (_, __) =>
+        MaterialPage(child: TreatingCovidScreen()),
     Routes.addPlasmaRoute: (_, __) => MaterialPage(child: AddPlasmaScreen()),
   });
 

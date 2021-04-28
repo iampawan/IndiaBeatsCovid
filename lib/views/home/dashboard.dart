@@ -68,7 +68,10 @@ class Dashboard extends StatelessWidget {
         ActionCard(
           title: Constants.twitterSearch,
           subtitle2: Constants.twitterResources,
-          iconOrImage: const Icon(FontAwesome.twitter).pOnly(left: 8),
+          iconOrImage: const Icon(
+            FontAwesome.twitter,
+            color: Vx.blue400,
+          ).pOnly(left: 8),
           color: Vx.blue400,
           onTap: () => context.vxNav.push(Uri.parse(Routes.twitterSearchRoute)),
         ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
@@ -78,12 +81,25 @@ class Dashboard extends StatelessWidget {
           builder: (context, followLink) => ActionCard(
             title: Constants.registerForVaccine,
             subtitle2: Constants.vaccineSub,
-            iconOrImage:
-                const Icon(MaterialCommunityIcons.medical_bag).pOnly(left: 8),
-            color: Vx.gray400,
+            iconOrImage: const Icon(
+              MaterialCommunityIcons.medical_bag,
+              color: Vx.rose400,
+            ).pOnly(left: 8),
+            color: Vx.rose400,
             onTap: followLink,
           ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
         ),
+        20.heightBox,
+        ActionCard(
+          title: Constants.treatingCovid,
+          subtitle2: Constants.careTips,
+          iconOrImage: const Icon(
+            AntDesign.Safety,
+            color: Vx.purple400,
+          ).pOnly(left: 8),
+          color: Vx.purple400,
+          onTap: () => context.vxNav.push(Uri.parse(Routes.treatingCovidRoute)),
+        ).wh(context.screenWidth, 80.0).pOnly(right: 30.0),
       ],
     );
   }
