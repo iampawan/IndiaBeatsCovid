@@ -3,8 +3,9 @@ import 'package:india_beats_covid/mutations/bottom_bar_mutation.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/views/common/error_page.dart';
-import 'package:india_beats_covid/views/home/apply_volunteer.dart';
+import 'package:india_beats_covid/views/home/bottom_bar.dart';
 import 'package:india_beats_covid/views/home/theme_button.dart';
+import 'package:india_beats_covid/views/links/crowdfunding.dart';
 import 'package:india_beats_covid/views/links/link_screen.dart';
 import 'package:url_launcher/link.dart';
 
@@ -22,25 +23,7 @@ class HomeScreen extends StatelessWidget {
         title: Constants.appName.text.xl2.semiBold.make(),
         actions: [ThemeButton()],
       ),
-      bottomNavigationBar: VxBuilder(
-        mutations: {BottomBarMutation},
-        builder: (context, _) => CupertinoTabBar(
-          onTap: (value) => BottomBarMutation(value),
-          currentIndex: store.selectedIndex,
-          items: [
-            const BottomNavigationBarItem(
-              label: "Home",
-              icon: Icon(CupertinoIcons.home),
-            ),
-            const BottomNavigationBarItem(
-                label: "External Links", icon: Icon(CupertinoIcons.link)),
-            const BottomNavigationBarItem(
-              label: "Add",
-              icon: Icon(CupertinoIcons.add),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: BottomBar(),
       body: VxBuilder(
           builder: (context, status) {
             if (status == VxStatus.none) {
@@ -48,34 +31,11 @@ class HomeScreen extends StatelessWidget {
               return const CupertinoActivityIndicator().centered();
             } else if (status == VxStatus.success) {
               if (store.selectedIndex == 0)
-                return [
-                  [
-                    "We have a small team of volunteers who are regularly verifying all the contacts submitted."
-                        .text
-                        .caption(context)
-                        .make(),
-                    10.heightBox,
-                    Dashboard(stats: store.stats),
-                  ].vStack(crossAlignment: CrossAxisAlignment.start),
-                  [
-                    Link(
-                      uri: Uri.parse(Constants.policyUrl),
-                      builder: (context, followLink) => "Declaration/Policy"
-                          .text
-                          .underline
-                          .make()
-                          .onTap(followLink),
-                    ),
-                    10.heightBox,
-                    "Website Support & Requests: ${Constants.mailID}"
-                        .selectableText
-                        .textStyle(context.captionStyle)
-                        .make(),
-                  ].vStack(crossAlignment: CrossAxisAlignment.start).p16()
-                ].vStack(crossAlignment: CrossAxisAlignment.start);
-              else if (store.selectedIndex == 1) return LinkScreen();
-
-              return AddAction();
+                return buildHomeWidget(context, store);
+              else if (store.selectedIndex == 1)
+                return LinkScreen();
+              else if (store.selectedIndex == 2) return AddAction();
+              return CrowdFunding();
             } else if (status == VxStatus.error) {
               return ErrorPage();
             }
@@ -83,5 +43,32 @@ class HomeScreen extends StatelessWidget {
           },
           mutations: {StatsMutation, BottomBarMutation}).p16().scrollVertical(),
     );
+  }
+
+  Widget buildHomeWidget(BuildContext context, Store store) {
+    return [
+      [
+        "We have a small team of volunteers who are regularly verifying all the contacts submitted."
+            .text
+            .caption(context)
+            .make(),
+        10.heightBox,
+        Dashboard(stats: store.stats),
+      ].vStack(crossAlignment: CrossAxisAlignment.start),
+      [
+        Link(
+          uri: Uri.parse(Constants.policyUrl),
+          builder: (context, followLink) =>
+              "Declaration/Policy".text.underline.make().onTap(followLink),
+        ),
+        10.heightBox,
+        "Website Support & Requests: ${Constants.mailID}"
+            .selectableText
+            .textStyle(context.captionStyle)
+            .make(),
+        10.heightBox,
+        "Version - 1.0.0".text.caption(context).make(),
+      ].vStack(crossAlignment: CrossAxisAlignment.start).p16()
+    ].vStack(crossAlignment: CrossAxisAlignment.start);
   }
 }

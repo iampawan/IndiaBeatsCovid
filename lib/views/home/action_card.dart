@@ -61,7 +61,7 @@ class ActionCard extends StatelessWidget {
           .clip(Clip.antiAlias)
           .color(context.theme.cardColor)
           .width(context.percentWidth * 40)
-          .height(context.percentHeight * 18)
+          .height(context.percentHeight * 20)
           .border(color: color)
           .roundedSM
           .make(),

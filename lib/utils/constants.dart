@@ -36,4 +36,6 @@ mixin Constants {
       "Find latest resources in real time on Twitter";
   static String selectRegion = "Select/Type Region";
   static String findOnTwitter = "Find On Twitter";
+  static String registerForVaccine = "Register for Vaccination";
+  static String vaccineSub = "Registration open for Age 18+";
 }

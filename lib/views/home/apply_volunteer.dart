@@ -9,7 +9,8 @@ class ApplyVolunteer extends StatelessWidget {
       target: LinkTarget.blank,
       uri: Uri.parse("https://indiabeatscovid.in/volunteers/new"),
       builder: (context, followLink) => ElevatedButton(
-          onPressed: followLink, child: "Apply as a Volunteer".text.make()),
+              onPressed: followLink, child: "Apply as a Volunteer".text.make())
+          .h(50),
     );
   }
 }
