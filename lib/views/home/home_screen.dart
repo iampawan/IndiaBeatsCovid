@@ -4,7 +4,10 @@ import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/utils/routes.dart';
 import 'package:india_beats_covid/views/common/error_page.dart';
+import 'package:india_beats_covid/views/common/external_link.dart';
+import 'package:india_beats_covid/views/home/apply_volunteer.dart';
 import 'package:india_beats_covid/views/home/theme_button.dart';
+import 'package:url_launcher/link.dart';
 
 import '../../pkgs.dart';
 import 'dashboard.dart';
@@ -48,20 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         .semiBold
                         .make()
                         .px16(),
-                    GestureDetector(
-                      onTap: () =>
-                          context.vxNav.push(Uri.parse(Routes.linkRoute)),
-                      child: Card(
-                        elevation: 0.0,
-                        child: ListTile(
-                          title: "External Links".text.xl.semiBold.make(),
-                          trailing: const Icon(
-                            FontAwesome.link,
-                            color: Vx.purple400,
-                          ),
-                        ),
-                      ),
-                    )
+                    ExternalLink(),
+                    10.heightBox,
+                    ApplyVolunteer().p16(),
                   ].vStack(crossAlignment: CrossAxisAlignment.start);
                 } else if (status == VxStatus.error) {
                   return ErrorPage();

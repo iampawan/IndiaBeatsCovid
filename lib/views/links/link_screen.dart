@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/views/common/error_page.dart';
-import 'package:india_beats_covid/views/plasma/donors_list.dart';
 
 import '../../pkgs.dart';
 import 'links_list.dart';
