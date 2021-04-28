@@ -1,4 +1,4 @@
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:india_beats_covid/core/models/oxygen_suppliers.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/utils.dart';
@@ -48,7 +48,7 @@ class OxygenList extends StatelessWidget {
                                 supplier?.lastVerifiedAt)),
                         10.widthBox,
                         const Icon(
-                          FontAwesome.check_circle,
+                          CupertinoIcons.checkmark_seal_fill,
                           color: Vx.blue500,
                           size: 16.0,
                         ).centered()

@@ -17,7 +17,10 @@ class LinkScreen extends StatelessWidget {
             print("loaded");
             return const CupertinoActivityIndicator().centered();
           } else if (status == VxStatus.success) {
-            return LinksList(links: store.externalLinks);
+            return [
+              LinksList(links: store.externalLinks),
+              150.heightBox,
+            ].vStack(crossAlignment: CrossAxisAlignment.start);
           } else if (status == VxStatus.error) {
             return ErrorPage();
           }
