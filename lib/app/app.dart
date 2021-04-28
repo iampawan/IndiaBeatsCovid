@@ -4,6 +4,7 @@ import 'package:india_beats_covid/utils/themes/theme.dart';
 import 'package:india_beats_covid/views/home/home_screen.dart';
 import 'package:india_beats_covid/views/hospital/hospital_screen.dart';
 import 'package:india_beats_covid/views/links/link_screen.dart';
+import 'package:india_beats_covid/views/medicine/medicine_screen.dart';
 import 'package:india_beats_covid/views/oxygen/oxygen_screen.dart';
 import 'package:india_beats_covid/views/plasma/plasma_screen.dart';
 
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
     Routes.hospitalRoute: (_, __) => MaterialPage(child: HospitalScreen()),
     Routes.oxygenRoute: (_, __) => MaterialPage(child: OxygenScreen()),
     Routes.linkRoute: (_, __) => MaterialPage(child: LinkScreen()),
+    Routes.medicineRoute: (_, __) => MaterialPage(child: MedicineScreen()),
   });
 
   @override

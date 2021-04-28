@@ -21,6 +21,7 @@ mixin Constants {
 
   static String noInternet = "Looks like you are not connected to the internet";
   static String wentWrong = "Something went wrong";
+  static String noData = "No data found";
 
   // * Home Texts
   static String plasmaDonors = "Plasma Donors";

@@ -1,5 +1,5 @@
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:india_beats_covid/core/models/hospital_beds.dart';
+import 'package:india_beats_covid/core/models/medicine.dart';
 import 'package:india_beats_covid/mutations/get_apis_mutation.dart';
 import 'package:india_beats_covid/utils/utils.dart';
 import 'package:india_beats_covid/views/common/my_rich_text.dart';
@@ -7,55 +7,46 @@ import 'package:india_beats_covid/views/common/no_data_page.dart';
 
 import '../../pkgs.dart';
 
-class HospitalList extends StatelessWidget {
-  final List<HospitalBeds> beds;
+class MedicinesList extends StatelessWidget {
+  final List<MedicineSupply> medicineSupplies;
 
-  const HospitalList({Key key, @required this.beds}) : super(key: key);
+  const MedicinesList({Key key, @required this.medicineSupplies})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Store store = VxState.store;
-    return beds.isNotEmpty
+    return medicineSupplies.isNotEmpty
         ? ListView.builder(
             // separatorBuilder: (context, index) => const Divider(),
-            itemCount: beds.length,
+            itemCount: medicineSupplies.length,
             itemBuilder: (context, index) {
-              final HospitalBeds bed = beds[index];
+              final MedicineSupply supply = medicineSupplies[index];
               return Card(
                 elevation: 0.0,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    bed.hospitalName.text.xl.semiBold.make(),
+                    supply.medicineName.text.xl.semiBold.make(),
                     10.heightBox,
-                    MyRichText(
-                      title: "ICU Covid Beds",
-                      value: bed.icuBeds.toString(),
-                      isImportant: true,
-                    ),
-                    MyRichText(
-                      title: "Oxygen Beds",
-                      value: bed.beds.toString(),
-                      isImportant: true,
-                    ),
-                    MyRichText(title: "Address", value: bed.address),
-                    if (bed.cityId != null)
+                    MyRichText(title: "Address", value: supply.address),
+                    if (supply.cityId != null)
                       MyRichText(
                           title: "City",
-                          value: CityMutation.getCity(store, bed.cityId)),
-                    MyRichText(title: "Contact Name", value: bed.contactName),
+                          value: CityMutation.getCity(store, supply.cityId)),
                     MySelectableRichText(
-                        title: "Phone", value: bed.phone?.toString()),
+                        title: "Phone", value: supply.phone?.toString()),
                     MySelectableRichText(
                         title: "Alt Phone",
-                        value: bed.alternatePhone?.toString()),
+                        value: supply.alternatePhone?.toString()),
                     MyRichText(
                         title: "Submitted",
-                        value: Utils.getFormattedTime(bed?.createdAt)),
-                    if (!bed.lastVerifiedAt.isEmptyOrNull)
+                        value: Utils.getFormattedTime(supply?.createdAt)),
+                    if (!supply.lastVerifiedAt.isEmptyOrNull)
                       [
                         MyRichText(
                             title: "Verified At",
-                            value: Utils.getFormattedTime(bed?.lastVerifiedAt)),
+                            value:
+                                Utils.getFormattedTime(supply?.lastVerifiedAt)),
                         10.widthBox,
                         const Icon(
                           FontAwesome.check_circle,

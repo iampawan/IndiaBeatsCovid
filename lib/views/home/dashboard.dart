@@ -1,6 +1,7 @@
 import 'package:india_beats_covid/core/models/stats.dart';
 import 'package:india_beats_covid/utils/constants.dart';
 import 'package:india_beats_covid/utils/routes.dart';
+import 'package:india_beats_covid/utils/utils.dart';
 
 import '../../pkgs.dart';
 import 'action_card.dart';
@@ -23,29 +24,33 @@ class Dashboard extends StatelessWidget {
             ActionCard(
               title: Constants.plasmaDonors,
               subtitle: stats.plasmaDonors.total.toString(),
-              dense: stats.plasmaDonors.formattedTime,
+              dense: Utils.getFormattedTime(stats.plasmaDonors.formattedTime),
               color: Vx.emerald400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.plasmaRoute)),
             ),
             ActionCard(
               title: Constants.hospitalWithBeds,
               subtitle: stats.hospitalBeds.total.toString(),
-              dense: stats.hospitalBeds.formattedTime,
+              dense: Utils.getFormattedTime(stats.hospitalBeds.formattedTime),
               color: Vx.pink400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.hospitalRoute)),
             ),
             ActionCard(
               title: Constants.oxygenSuppliers,
               subtitle: stats.oxygenSuppliers.total.toString(),
-              dense: stats.oxygenSuppliers.formattedTime,
+              dense:
+                  Utils.getFormattedTime(stats.oxygenSuppliers.formattedTime),
               color: Vx.cyan400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.oxygenRoute)),
             ),
             ActionCard(
               title: Constants.medicineSuppliers,
               subtitle: stats.medicines.total.toString(),
-              dense: stats.medicines.formattedTime,
+              dense: stats.medicines.formattedTime != "NA"
+                  ? Utils.getFormattedTime(stats.medicines.formattedTime)
+                  : stats.medicines.formattedTime,
               color: Vx.amber400,
+              onTap: () => context.vxNav.push(Uri.parse(Routes.medicineRoute)),
             ),
           ],
         ).wFull(context)

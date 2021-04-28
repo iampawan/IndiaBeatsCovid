@@ -42,6 +42,12 @@ class APIService {
     return _client.getAsync(_url);
   }
 
+  //Medicine Suppliers Api
+  Future<MappedServiceResponse<dynamic>> getMedicineSupplies() async {
+    const _url = "medicines.json";
+    return _client.getAsync(_url);
+  }
+
   //Cities Api
   Future<MappedServiceResponse<dynamic>> getCities() {
     const _url = "cities.json";

@@ -4,4 +4,5 @@ mixin Routes {
   static String hospitalRoute = "/hospital";
   static String oxygenRoute = "/oxygen";
   static String linkRoute = "/links";
+  static String medicineRoute = "/medicines";
 }
