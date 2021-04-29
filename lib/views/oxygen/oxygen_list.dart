@@ -47,9 +47,9 @@ class OxygenList extends StatelessWidget {
                             value: Utils.getFormattedTime(
                                 supplier?.lastVerifiedAt)),
                         10.widthBox,
-                        const Icon(
+                        Icon(
                           CupertinoIcons.checkmark_seal_fill,
-                          color: Vx.blue500,
+                          color: store.isDarkTheme ? Vx.white : Vx.blue500,
                           size: 16.0,
                         ).centered()
                       ].hStack(crossAlignment: CrossAxisAlignment.center)

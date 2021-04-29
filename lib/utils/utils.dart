@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 mixin Utils {
   static bool get checkIfDebug {
@@ -12,17 +12,17 @@ mixin Utils {
     if (iso != null) {
       final DateTime now = DateTime.parse(iso);
       final DateFormat formatter = DateFormat('dd-MM-yyyy hh:mm aa');
-      return formatter.format(now);
+      return "${formatter.format(now)} (~${timeago.format(now)})";
     }
     return null;
   }
 
-  static String getTimeAgo(String iso, {bool enableShort = true}) {
-    if (iso != null) {
-      final DateTime now = DateTime.parse(iso);
+  // static String getTimeAgo(String iso, {bool enableShort = true}) {
+  //   if (iso != null) {
+  //     final DateTime now = DateTime.parse(iso);
 
-      return now.timeAgo(enableFromNow: enableShort);
-    }
-    return null;
-  }
+  //     return now.timeAgo(enableFromNow: enableShort);
+  //   }
+  //   return null;
+  // }
 }

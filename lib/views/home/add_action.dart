@@ -9,10 +9,7 @@ class AddAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return [
-      Wrap(
-        alignment: WrapAlignment.spaceAround,
-        spacing: 0.0,
-        runSpacing: 30.0,
+      Column(
         children: [
           Link(
             uri: Uri.parse("https://indiabeatscovid.in/plasma_donors/new?"),
@@ -27,7 +24,8 @@ class AddAction extends StatelessWidget {
               color: Vx.emerald500,
               onTap: link,
             ),
-          ),
+          ).wFull(context),
+          20.heightBox,
           Link(
             uri: Uri.parse("https://indiabeatscovid.in/hospital_beds/new?"),
             target: LinkTarget.blank,
@@ -41,7 +39,8 @@ class AddAction extends StatelessWidget {
               color: Vx.pink500,
               onTap: link,
             ),
-          ),
+          ).wFull(context),
+          20.heightBox,
           Link(
             uri: Uri.parse("https://indiabeatscovid.in/oxygen_suppliers/new?"),
             target: LinkTarget.blank,
@@ -55,7 +54,8 @@ class AddAction extends StatelessWidget {
               color: Vx.cyan500,
               onTap: link,
             ),
-          ),
+          ).wFull(context),
+          20.heightBox,
           Link(
             uri: Uri.parse("https://indiabeatscovid.in/medicines/new?"),
             target: LinkTarget.blank,
@@ -69,7 +69,8 @@ class AddAction extends StatelessWidget {
               color: Vx.amber500,
               onTap: link,
             ),
-          )
+          ).wFull(context),
+          20.heightBox,
         ],
       ).wFull(context),
       "If you can bring in more contacts or can help us verify the contacts being received, please join us as a volunteer"

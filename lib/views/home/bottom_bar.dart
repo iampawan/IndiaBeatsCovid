@@ -20,7 +20,7 @@ class BottomBar extends StatelessWidget {
           const BottomNavigationBarItem(
               label: "External Links", icon: Icon(CupertinoIcons.link)),
           const BottomNavigationBarItem(
-            label: "Add",
+            label: "Contribute",
             icon: Icon(CupertinoIcons.add),
           ),
           const BottomNavigationBarItem(

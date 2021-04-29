@@ -1,12 +1,4 @@
-[
-  {
-      "id": 1,
-      "medicine_name": "Fabiflu",
-      "phone": "a",
-      "alternate_phone": "a",
-      "address": "a",
-      "city_id": 3285,
-      "created_at": "2021-04-24T09:45:29.381Z",
-      "last_verified_at": null
-  }
-]
+{
+  "version": 1.0,
+  "link": "https://drive.google.com/file/d/1KRLkdWzarEM3FQvWS-pOQ3W_R7JNO7ta/view?usp=sharing"
+}

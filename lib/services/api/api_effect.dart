@@ -5,7 +5,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 abstract class APIEffects implements VxEffects<MappedServiceResponse<dynamic>> {
   @override
-  fork(result) async {
+  fork(result) {
     try {
       if (result.networkServiceResponse.success) {
         success(result.mappedResult);

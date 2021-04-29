@@ -11,7 +11,7 @@ import 'package:url_launcher/link.dart';
 
 import '../../pkgs.dart';
 import 'add_action.dart';
-import 'dashboard.dart';
+import 'home_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -24,14 +24,48 @@ class HomeScreen extends StatelessWidget {
         actions: [ThemeButton()],
       ),
       bottomNavigationBar: BottomBar(),
-      body: VxBuilder(
+      body: VxConsumer(
+          notifications: {
+            CheckVersionMutation: (context, _) {
+              if (store.versionChecker.version > Constants.appVersion) {
+                showDialog(
+                    barrierDismissible: !store.versionChecker.isCompulsory,
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title:
+                              "New Update Available v${store.versionChecker.version}"
+                                  .text
+                                  .bold
+                                  .isIntrinsic
+                                  .make(),
+                          content: Link(
+                            builder: (context, followLink) => [
+                              "Download from here:"
+                                  .text
+                                  .semiBold
+                                  .isIntrinsic
+                                  .make(),
+                              store.versionChecker.link.text.isIntrinsic
+                                  .underline
+                                  .make()
+                            ]
+                                .vStack(
+                                    crossAlignment: CrossAxisAlignment.start)
+                                .onTap(followLink),
+                            target: LinkTarget.blank,
+                            uri: Uri.parse(store.versionChecker.link),
+                          ),
+                        ));
+              }
+            }
+          },
           builder: (context, status) {
             if (status == VxStatus.none) {
               print("loaded");
               return const CupertinoActivityIndicator().centered();
             } else if (status == VxStatus.success) {
               if (store.selectedIndex == 0)
-                return buildHomeWidget(context, store);
+                return HomeWidgets();
               else if (store.selectedIndex == 1)
                 return LinkScreen();
               else if (store.selectedIndex == 2) return AddAction();
@@ -41,47 +75,11 @@ class HomeScreen extends StatelessWidget {
             }
             return Constants.wentWrong.text.xl2.semiBold.makeCentered();
           },
-          mutations: {StatsMutation, BottomBarMutation}).p16().scrollVertical(),
+          mutations: {
+            StatsMutation,
+            BottomBarMutation,
+            CheckVersionMutation
+          }).p16().scrollVertical(),
     );
-  }
-
-  Widget buildHomeWidget(BuildContext context, Store store) {
-    return [
-      [
-        "We have a small team of volunteers who are regularly verifying all the contacts submitted."
-            .text
-            .caption(context)
-            .make(),
-        10.heightBox,
-        Dashboard(stats: store.stats),
-      ].vStack(crossAlignment: CrossAxisAlignment.start),
-      [
-        Link(
-          target: LinkTarget.blank,
-          uri: Uri.parse(Constants.policyUrl),
-          builder: (context, followLink) =>
-              "Declaration/Policy".text.underline.make().onTap(followLink),
-        ),
-        10.heightBox,
-        "Website Support & Requests: ${Constants.mailID}"
-            .selectableText
-            .textStyle(context.captionStyle)
-            .make(),
-        10.heightBox,
-        "Version - 1.0.0".text.caption(context).make(),
-        10.heightBox,
-        Link(
-          uri: Uri.parse(Constants.devUrl),
-          target: LinkTarget.blank,
-          builder: (context, followLink) => "Reach to developer"
-              .text
-              .rose400
-              .underline
-              .semiBold
-              .make()
-              .onTap(followLink),
-        ),
-      ].vStack(crossAlignment: CrossAxisAlignment.start).p16()
-    ].vStack(crossAlignment: CrossAxisAlignment.start);
   }
 }

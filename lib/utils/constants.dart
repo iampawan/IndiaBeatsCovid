@@ -1,6 +1,7 @@
 mixin Constants {
   // App Related
   static String appName = "India Beats Covid";
+  static double appVersion = 1.0;
   static String baseUrl = "https://indiabeatscovid.in/";
   static String policyUrl = "https://indiabeatscovid.in/policies";
   static String devUrl = "https://twitter.com/imthepk";

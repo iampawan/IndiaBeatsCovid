@@ -99,9 +99,11 @@ class TreatingCovidScreen extends StatelessWidget {
             VxDiscList(
               [
                 "Paracetamol for fever",
-                "Chestan cold for cold",
                 "Budesonide for Inhalation",
-                "Karvol Plus for Inhalation",
+                "Karvol Plus for steam",
+                "Azithromycin",
+                "Doxycycline",
+                "Vitamin C & Zinc"
               ],
               color: context.textTheme.bodyText1.color,
             ).w56(context),

@@ -34,32 +34,32 @@ class Dashboard extends StatelessWidget {
           children: [
             ActionCard(
               title: Constants.plasmaDonors,
-              subtitle: stats.plasmaDonors.total.toString(),
-              dense: Utils.getFormattedTime(stats.plasmaDonors.formattedTime),
+              subtitle: stats?.plasmaDonors?.total?.toString(),
+              dense: Utils.getFormattedTime(stats?.plasmaDonors?.formattedTime),
               color: Vx.emerald400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.plasmaRoute)),
             ),
             ActionCard(
               title: Constants.hospitalWithBeds,
-              subtitle: stats.hospitalBeds.total.toString(),
-              dense: Utils.getFormattedTime(stats.hospitalBeds.formattedTime),
+              subtitle: stats?.hospitalBeds?.total?.toString(),
+              dense: Utils.getFormattedTime(stats?.hospitalBeds?.formattedTime),
               color: Vx.pink400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.hospitalRoute)),
             ),
             ActionCard(
               title: Constants.oxygenSuppliers,
-              subtitle: stats.oxygenSuppliers.total.toString(),
+              subtitle: stats?.oxygenSuppliers?.total?.toString(),
               dense:
-                  Utils.getFormattedTime(stats.oxygenSuppliers.formattedTime),
+                  Utils.getFormattedTime(stats?.oxygenSuppliers?.formattedTime),
               color: Vx.cyan400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.oxygenRoute)),
             ),
             ActionCard(
               title: Constants.medicineSuppliers,
-              subtitle: stats.medicines.total.toString(),
-              dense: stats.medicines.formattedTime != "NA"
-                  ? Utils.getFormattedTime(stats.medicines.formattedTime)
-                  : stats.medicines.formattedTime,
+              subtitle: stats?.medicines?.total?.toString(),
+              dense: stats?.medicines?.formattedTime != "NA"
+                  ? Utils.getFormattedTime(stats?.medicines?.formattedTime)
+                  : stats?.medicines?.formattedTime,
               color: Vx.amber400,
               onTap: () => context.vxNav.push(Uri.parse(Routes.medicineRoute)),
             ),

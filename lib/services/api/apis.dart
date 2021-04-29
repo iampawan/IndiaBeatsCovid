@@ -53,4 +53,10 @@ class APIService {
     const _url = "cities.json";
     return _client.getAsync(_url);
   }
+
+  //Version Api
+  Future<MappedServiceResponse<dynamic>> checkVersion() {
+    const _url = "version.json";
+    return _client.getAsync(_url);
+  }
 }
