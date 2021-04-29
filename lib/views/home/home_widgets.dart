@@ -43,6 +43,18 @@ class HomeWidgets extends StatelessWidget {
               .make()
               .onTap(followLink),
         ),
+        10.heightBox,
+        Link(
+          uri: Uri.parse(Constants.githubUrl),
+          target: LinkTarget.blank,
+          builder: (context, followLink) => "Check on github"
+              .text
+              .teal400
+              .underline
+              .semiBold
+              .make()
+              .onTap(followLink),
+        ),
       ].vStack(crossAlignment: CrossAxisAlignment.start).p16()
     ].vStack(crossAlignment: CrossAxisAlignment.start);
   }

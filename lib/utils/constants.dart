@@ -5,6 +5,7 @@ mixin Constants {
   static String baseUrl = "https://indiabeatscovid.in/";
   static String policyUrl = "https://indiabeatscovid.in/policies";
   static String devUrl = "https://twitter.com/imthepk";
+  static String githubUrl = "https://github.com/iampawan/IndiaBeatsCovid";
   static String mailID = "indiabeatscovid@gmail.com";
 
   //Assets

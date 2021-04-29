@@ -3,7 +3,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 mixin Utils {
   static bool get checkIfDebug {
-    var debug = false;
+    var debug = false;  
     assert(debug = true);
     return debug;
   }
