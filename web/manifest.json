@@ -1,11 +1,11 @@
 {
-    "name": "india_beats_covid",
-    "short_name": "india_beats_covid",
+    "name": "India Beats Covid",
+    "short_name": "india beats covid",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A new COVID project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

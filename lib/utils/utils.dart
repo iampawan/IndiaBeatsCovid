@@ -12,7 +12,7 @@ mixin Utils {
     if (iso != null) {
       final DateTime now = DateTime.parse(iso);
       final DateFormat formatter = DateFormat('dd-MM-yyyy hh:mm aa');
-      return "${formatter.format(now)} (~${timeago.format(now)})";
+      return "${formatter.format(now)} (~${timeago.format(now, allowFromNow: true)})";
     }
     return null;
   }

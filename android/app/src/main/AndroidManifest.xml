@@ -17,7 +17,7 @@
     </intent>
 </queries>
    <application
-        android:label="india_beats_covid"
+        android:label="India Beats Covid"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

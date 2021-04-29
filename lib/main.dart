@@ -26,12 +26,12 @@ Future<void> main() async {
 }
 
 void setOverlay() {
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: Colors.transparent,
-    ),
-  );
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent,
+  //     systemNavigationBarColor: Colors.transparent,
+  //   ),
+  // );
   //* Forcing only portrait orientation
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
