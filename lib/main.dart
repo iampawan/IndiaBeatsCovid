@@ -10,9 +10,10 @@ import 'pkgs.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  setOverlay();
 
   setPathUrlStrategy();
+
+  setOverlay();
 
   final dio = Dio(BaseOptions(baseUrl: Constants.baseUrl));
 

@@ -30,7 +30,7 @@ class HomeWidgets extends StatelessWidget {
             .textStyle(context.captionStyle)
             .make(),
         10.heightBox,
-        "Version - 1.0.0".text.caption(context).make(),
+        "Version - ${Constants.appVersion}".text.caption(context).make(),
         10.heightBox,
         Link(
           uri: Uri.parse(Constants.devUrl),

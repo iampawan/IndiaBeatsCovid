@@ -26,7 +26,7 @@ class TreatingCovidScreen extends StatelessWidget {
               .make(),
           10.heightBox,
           [
-            if (!Vx.isWeb)
+            // if (!Vx.isWeb)
               SvgPicture.asset(
                 "${Constants.imageAsset}doctor-woman.svg",
                 height: 300.0,
@@ -58,7 +58,7 @@ class TreatingCovidScreen extends StatelessWidget {
               ],
               color: context.textTheme.bodyText1.color,
             ).w56(context),
-            if (!Vx.isWeb)
+            // if (!Vx.isWeb)
               SvgPicture.asset(
                 "${Constants.imageAsset}mask-woman.svg",
                 height: 200.0,
@@ -107,7 +107,7 @@ class TreatingCovidScreen extends StatelessWidget {
               ],
               color: context.textTheme.bodyText1.color,
             ).w56(context),
-            if (!Vx.isWeb)
+            // if (!Vx.isWeb)
               SvgPicture.asset(
                 "${Constants.imageAsset}doctor-man.svg",
                 height: 200.0,

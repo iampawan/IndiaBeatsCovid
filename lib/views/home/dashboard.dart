@@ -19,11 +19,11 @@ class Dashboard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         [
-          if (!Vx.isWeb)
-            SvgPicture.asset(
-              "${Constants.imageAsset}mask-man.svg",
-              height: 100.0,
-            ),
+          // if (!Vx.isWeb)
+          SvgPicture.asset(
+            "${Constants.imageAsset}mask-man.svg",
+            height: 100.0,
+          ),
           "Dashboard".text.bodyText2(context).xl4.semiBold.make(),
         ].hStack(),
         20.heightBox,
