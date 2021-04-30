@@ -257,6 +257,6 @@ class CrowdFunding extends StatelessWidget {
           ),
         ),
       ],
-    ).h(context.percentHeight * 80);
+    );
   }
 }

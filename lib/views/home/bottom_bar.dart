@@ -18,14 +18,14 @@ class BottomBar extends StatelessWidget {
             icon: Icon(CupertinoIcons.home),
           ),
           const BottomNavigationBarItem(
+            label: "Twitter Search",
+            icon: Icon(CupertinoIcons.search),
+          ),
+          const BottomNavigationBarItem(
               label: "External Links", icon: Icon(CupertinoIcons.link)),
           const BottomNavigationBarItem(
             label: "Contribute",
             icon: Icon(CupertinoIcons.add),
-          ),
-          const BottomNavigationBarItem(
-            label: "CrowdFunding",
-            icon: Icon(CupertinoIcons.group),
           ),
         ],
       ),

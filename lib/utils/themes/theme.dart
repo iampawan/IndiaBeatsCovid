@@ -9,7 +9,9 @@ class AppTheme {
       brightness: Brightness.light,
       primaryColor: AppColors.primaryColor,
       accentColor: AppColors.accentColor,
-      fontFamily: GoogleFonts.muli().fontFamily,
+      // cardColor: Colors.white,
+      // scaffoldBackgroundColor: Colors.white,
+      fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: AppBarTheme(
         elevation: 0.0,
         backgroundColor: Colors.white,
@@ -26,7 +28,8 @@ class AppTheme {
       primarySwatch: Colors.teal,
       primaryColor: AppColors.primaryColor,
       accentColor: AppColors.accentColor,
-      fontFamily: GoogleFonts.muli().fontFamily,
+      // cardColor: Colors.black26,
+      fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: AppBarTheme(
         elevation: 0.0,
         color: Colors.black26,

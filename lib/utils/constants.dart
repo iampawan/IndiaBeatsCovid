@@ -35,6 +35,8 @@ mixin Constants {
   static String medicineSuppliers = "COVID Medicine Suppliers";
   static String externalLinks = "External Links";
   static String twitterSearch = "Twitter Search for COVID";
+  static String crowdFunding = "Crowdfunding";
+  static String fundRaising = "Fundraising to fight with COVID";
   static String twitterResources =
       "Find latest resources in real time on Twitter";
   static String selectRegion = "Select/Type Region";

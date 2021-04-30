@@ -4,6 +4,7 @@ import '../../pkgs.dart';
 
 class ActionCard extends StatelessWidget {
   final Color color;
+  final Color titleColor;
   final String title;
   final String subtitle;
   final String subtitle2;
@@ -14,6 +15,7 @@ class ActionCard extends StatelessWidget {
   const ActionCard(
       {Key key,
       this.color = Vx.emerald400,
+      this.titleColor,
       @required this.title,
       this.subtitle,
       this.subtitle2,
@@ -23,6 +25,10 @@ class ActionCard extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final Store store = VxState.store;
+    final _titleColor = store.isDarkTheme
+        ? context.textTheme.bodyText1.color
+        : (titleColor ?? context.theme.textTheme.bodyText1.color);
     return GestureDetector(
       onTap: onTap,
       child: Row(
@@ -36,7 +42,7 @@ class ActionCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                title.text.xl2.extraBold.make(),
+                title.text.xl2.extraBold.color(_titleColor).make(),
                 if (subtitle != null)
                   "${Constants.total} Count - $subtitle"
                       .text
@@ -60,11 +66,21 @@ class ActionCard extends StatelessWidget {
       )
           .box
           .clip(Clip.antiAlias)
-          .color(context.theme.cardColor)
           .width(context.percentWidth * 40)
           // .height(Vx.isWeb ? null : context.percentHeight * 18)
-          .border(color: color)
-          .roundedSM
+          .linearGradient(
+            [
+              color.withOpacity(store.isDarkTheme ? 1.0 : 0.2),
+              if (store.isDarkTheme)
+                titleColor.withOpacity(0.2)
+              else
+                context.cardColor,
+            ],
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+          )
+          .outerShadowSm
+          .rounded
           .make(),
     );
   }

@@ -7,6 +7,7 @@ import 'package:india_beats_covid/views/home/bottom_bar.dart';
 import 'package:india_beats_covid/views/home/theme_button.dart';
 import 'package:india_beats_covid/views/links/crowdfunding.dart';
 import 'package:india_beats_covid/views/links/link_screen.dart';
+import 'package:india_beats_covid/views/links/twitter_screen.dart';
 import 'package:url_launcher/link.dart';
 
 import '../../pkgs.dart';
@@ -65,11 +66,13 @@ class HomeScreen extends StatelessWidget {
               return const CupertinoActivityIndicator().centered();
             } else if (status == VxStatus.success) {
               if (store.selectedIndex == 0)
-                return HomeWidgets();
+                return HomeWidgets().scrollVertical();
               else if (store.selectedIndex == 1)
+                return TwitterScreen();
+              else if (store.selectedIndex == 2)
                 return LinkScreen();
-              else if (store.selectedIndex == 2) return AddAction();
-              return CrowdFunding();
+              else if (store.selectedIndex == 3) return AddAction();
+              return HomeWidgets();
             } else if (status == VxStatus.error) {
               return ErrorPage();
             }
@@ -79,7 +82,7 @@ class HomeScreen extends StatelessWidget {
             StatsMutation,
             BottomBarMutation,
             CheckVersionMutation
-          }).p16().scrollVertical(),
+          }).p16(),
     );
   }
 }
