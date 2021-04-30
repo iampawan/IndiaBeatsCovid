@@ -2,7 +2,7 @@
 
 This is an effort to bring together and verify all the contacts of the needed resources for people fighting COVID-19 in our country India.
 
-[Download APK](https://drive.google.com/file/d/15aZfW8lyAkq1yWi8pCWWMQDf97l3gdMn/view?usp=sharing)
+[Download APK](https://bit.ly/indiabeatscovid)
 
 \*Please help us by volunteering
 
@@ -16,10 +16,13 @@ Secondary (Flutter Version) - [https://indiabeatscovid19.web.app/](https://india
 
 ### ScreenShots
 
+<img src="https://i.imgur.com/YljAW0P.png">
+
 |                                                           |                                                           |
 | --------------------------------------------------------- | --------------------------------------------------------- |
-| <img src="https://i.imgur.com/HimBii2.png"  width="300"/> | <img src="https://i.imgur.com/7sGQhyW.png"  width="300"/> |
-| <img src="https://i.imgur.com/m0errKS.png" width="300"/>  |
+| <img src="https://i.imgur.com/QGitch2.png"  width="300"/> | <img src="https://i.imgur.com/Y1hIyHw.png" width="300"/>  |
+| <img src="https://i.imgur.com/nM0owm8.png"  width="300"/> | <img src="https://i.imgur.com/uhMOGfn.png"  width="300"/> |
+| <img src="https://i.imgur.com/lUzRWBW.png" width="300"/>  | <img src="https://i.imgur.com/pgN6knC.png"  width="300"/> |
 
 ---
 
