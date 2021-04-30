@@ -71,7 +71,8 @@ class HomeScreen extends StatelessWidget {
                 return TwitterScreen();
               else if (store.selectedIndex == 2)
                 return LinkScreen();
-              else if (store.selectedIndex == 3) return AddAction();
+              else if (store.selectedIndex == 3)
+                return AddAction().scrollVertical();
               return HomeWidgets();
             } else if (status == VxStatus.error) {
               return ErrorPage();
